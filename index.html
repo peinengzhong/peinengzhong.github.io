@@ -3,431 +3,214 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="钟沛能 — 中山大学博士生，研究方向为具身智能机器人、机器人本体设计、视触觉感知与强化学习控制。" />
 
   <title>Peineng Zhong（钟沛能）</title>
 
-  <!-- Font Awesome 图标库 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="assets/css/main.css" />
 
-  <!-- Open Graph：飞书、微信、Slack、Twitter 等平台常用的链接预览信息 -->
   <meta property="og:title" content="Peineng Zhong（钟沛能）" />
   <meta property="og:description" content="中山大学博士生，研究方向为具身智能机器人、机器人本体设计、视触觉感知与强化学习控制。" />
-  <meta property="og:image" content="https://peinengzhong.github.io/avatar.jpg" />
+  <meta property="og:image" content="https://peinengzhong.github.io/assets/images/profile/avatar.jpg" />
   <meta property="og:url" content="https://peinengzhong.github.io/" />
   <meta property="og:type" content="website" />
 
-  <!-- Twitter Card：部分平台也会读取这组信息 -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Peineng Zhong（钟沛能）" />
   <meta name="twitter:description" content="中山大学博士生，研究方向为具身智能机器人、机器人本体设计、视触觉感知与强化学习控制。" />
-  <meta name="twitter:image" content="https://peinengzhong.github.io/avatar.jpg" />
-
-  <style>
-    /* =========================
-       全局基础样式
-    ========================= */
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-      line-height: 1.7;
-      color: #222;
-      background: #fff;
-    }
-
-    h1 {
-      font-size: 36px;
-      margin-bottom: 8px;
-    }
-
-    h2 {
-      margin-top: 40px;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 8px;
-      font-size: 26px;
-    }
-
-    .subtitle {
-      color: #666;
-      font-size: 18px;
-      margin-top: 0;
-    }
-
-    a {
-      color: #0366d6;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    ul {
-      padding-left: 22px;
-    }
-
-    li {
-      margin-bottom: 6px;
-    }
-
-    strong {
-      font-weight: 700;
-    }
-
-    /* =========================
-       个人简介区域
-    ========================= */
-    .profile {
-      display: flex;
-      gap: 24px;
-      align-items: center;
-      margin-top: 30px;
-    }
-
-    .profile img {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      object-fit: cover;
-      flex-shrink: 0;
-    }
-
-    .profile p {
-      margin-top: 0;
-    }
-
-    /* =========================
-       News 滚动图片相册
-    ========================= */
-    .gallery-wrapper {
-      width: 100%;
-      overflow: hidden;
-      padding: 12px 0 20px 0;
-    }
-
-    .gallery-track {
-      display: flex;
-      gap: 16px;
-      width: max-content;
-      animation: gallery-scroll 28s linear infinite;
-    }
-
-    .gallery-track img {
-      height: 180px;
-      width: auto;
-      max-width: 260px;
-      border-radius: 10px;
-      object-fit: cover;
-      flex-shrink: 0;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
-    }
-
-    .gallery-wrapper:hover .gallery-track {
-      animation-play-state: paused;
-    }
-
-    @keyframes gallery-scroll {
-      from {
-        transform: translateX(0);
-      }
-      to {
-        transform: translateX(-50%);
-      }
-    }
-
-    /* =========================
-       Bilibili 视频
-    ========================= */
-    .bilibili-video {
-      width: 320px;
-      height: 180px;
-      margin: 20px 0;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
-    }
-
-    .bilibili-video iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-      display: block;
-    }
-
-    /* =========================
-       荣誉奖励相册：横向卡片排列
-    ========================= */
-    .honor-gallery {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      margin-top: 20px;
-      margin-bottom: 10px;
-    }
-
-    .honor-card {
-      border-radius: 14px;
-      overflow: hidden;
-      background: #fff;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .honor-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
-    }
-
-    .honor-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      display: block;
-      cursor: pointer;
-    }
-
-    .honor-card p {
-      margin: 0;
-      padding: 10px 12px;
-      font-size: 14px;
-      line-height: 1.5;
-      color: #333;
-      background: #fff;
-    }
-
-    /* =========================
-       点击图片放大预览
-    ========================= */
-    .lightbox {
-      display: none;
-      position: fixed;
-      z-index: 9999;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.82);
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-      box-sizing: border-box;
-    }
-
-    .lightbox img {
-      max-width: 90%;
-      max-height: 90%;
-      border-radius: 10px;
-      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3);
-      background: white;
-    }
-
-    .lightbox-close {
-      position: fixed;
-      right: 28px;
-      top: 20px;
-      color: white;
-      font-size: 34px;
-      cursor: pointer;
-      font-weight: 300;
-      line-height: 1;
-    }
-
-    /* =========================
-       响应式适配
-    ========================= */
-    @media (max-width: 900px) {
-      .honor-gallery {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 600px) {
-      body {
-        margin: 24px auto;
-        padding: 0 16px;
-      }
-
-      h1 {
-        font-size: 30px;
-      }
-
-      h2 {
-        font-size: 23px;
-      }
-
-      .profile {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .profile img {
-        width: 140px;
-        height: 140px;
-      }
-
-      .honor-gallery {
-        grid-template-columns: 1fr;
-      }
-
-      .bilibili-video {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 16 / 9;
-      }
-    }
-  </style>
+  <meta name="twitter:image" content="https://peinengzhong.github.io/assets/images/profile/avatar.jpg" />
 </head>
-
 <body>
-  <h1>Peineng Zhong</h1>
-  <p class="subtitle">中山大学博士 / Xbotics 具身智能社区学员 / 《海军航空大学学报》学术联络人</p>
+  <div class="page">
+    <header class="site-header">
+      <nav class="site-nav" aria-label="页面导航">
+        <a href="#news">News</a>
+        <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
+        <a href="#publications">Publications</a>
+        <a href="#honors">Honors</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
 
-  <div class="profile">
-    <img src="avatar.jpg" alt="钟沛能头像" />
-    <div>
-      <p>
-        Hi！我是钟沛能，中山大学航院的一年级博士生，导师是孟得山。我目前的研究方向是具身智能机器人，包括机器人本体设计、视触觉感知、强化学习控制，同时加入并成为了 Xbotics 具身智能社区学员。
-        硕士期间受中国空间技术研究院北京卫星制造厂有限公司邀请参与了为期 2 年的航天领域横向工程项目。我在 ICBIR、ICMD 等学术会议上发表过 2 篇会议论文，在中科院二区期刊 Acta Astronautica（AA）上发表过 2 篇论文，授权发明专利 2 项，担任《海军航空大学学报》学术联络人。
-      </p>
-      <p>
-        <a href="mailto:peinengzhong@gmail.com">Email</a> ·
-        <a href="https://github.com/你的用户名">GitHub</a> ·
-        <a href="https://www.researchgate.net/profile/Peineng-Zhong?ev=hdr_xprf&_sg=1P5AWWk2GZL0F2V7YFlGTyZU-W56kpXu4-DXcK8ogYleL5iERdWhb2V8WbUHqCyHoiCdpSw_l_phQJQXwyM-R3OJ&_tp=eyJjb250ZXh0Ijp7ImZpcnN0UGFnZSI6ImhvbWUiLCJwYWdlIjoiaG9tZSIsInByZXZpb3VzUGFnZSI6ImhvbWUiLCJwb3NpdGlvbiI6Imdsb2JhbEhlYWRlciJ9fQ">ResearchGate</a> ·
-        <a href="#">Google Scholar</a>
-      </p>
-    </div>
+    <main>
+      <section class="hero" aria-label="个人简介">
+        <div class="hero__avatar-wrap">
+          <img
+            class="hero__avatar"
+            src="assets/images/profile/avatar.jpg"
+            alt="钟沛能头像"
+            width="168"
+            height="168"
+            loading="eager"
+          />
+        </div>
+        <div>
+          <h1 class="hero__title">Peineng Zhong</h1>
+          <p class="hero__subtitle">
+            中山大学博士 · Xbotics 具身智能社区学员 · 《海军航空大学学报》学术联络人
+          </p>
+          <p class="hero__bio">
+            Hi！我是钟沛能，中山大学航院的一年级博士生，导师是孟得山。我目前的研究方向是具身智能机器人，包括机器人本体设计、视触觉感知、强化学习控制，同时加入并成为了 Xbotics 具身智能社区学员。
+            硕士期间受中国空间技术研究院北京卫星制造厂有限公司邀请参与了为期 2 年的航天领域横向工程项目。我在 ICBIR、ICMD 等学术会议上发表过 2 篇会议论文，在中科院二区期刊 Acta Astronautica（AA）上发表过 2 篇论文，授权发明专利 2 项，担任《海军航空大学学报》学术联络人。
+          </p>
+          <div class="social-links">
+            <a href="mailto:peinengzhong@gmail.com"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Email</a>
+            <a href="https://github.com/peinengzhong" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>
+            <a href="https://www.researchgate.net/profile/Peineng-Zhong" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-researchgate" aria-hidden="true"></i> ResearchGate</a>
+            <a href="#" aria-label="Google Scholar（待补充链接）"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> Google Scholar</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="news" class="section" aria-labelledby="news-heading">
+        <h2 id="news-heading" class="section__title">News</h2>
+        <ul class="timeline">
+          <li class="timeline__item">
+            <span class="timeline__date">05/2026</span>
+            <p class="timeline__text">参加南沙未来产业训练营 OPC 社区全球启航活动，南沙。</p>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__date">04/2026</span>
+            <p class="timeline__text">参加机器人全产业链接会 <a href="https://fairplus.cn">FAIR Plus 2026</a>，深圳。</p>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__date">12/2025</span>
+            <p class="timeline__text">成立中山大学本科生大创团队，研究方向包括灵巧手、拟人臂和遥操作，其中一项获得国家级资助。</p>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__date">09/2025</span>
+            <p class="timeline__text">参加新质新域创新大赛 2025·决赛，青岛，项目「轻量化大负载绳驱空间机械臂」获得优胜奖。</p>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__date">08/2025</span>
+            <p class="timeline__text">参加国际仿生智能会议 <a href="https://www.icbir.org/2025">ICBIR 2025</a>，张掖。</p>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__date">06/2025</span>
+            <p class="timeline__text">攻读中山大学航空航天学院博士学位，进入空间机器人与具身智能实验室。</p>
+          </li>
+        </ul>
+
+        <div class="gallery-wrapper" aria-label="活动相册">
+          <div class="gallery-track">
+            <img src="assets/images/news/2025.6-1.jpg" alt="2025 年 6 月活动" loading="lazy" />
+            <img src="assets/images/news/2025.8.jpg" alt="2025 年 8 月 ICBIR" loading="lazy" />
+            <img src="assets/images/news/2025.9.jpg" alt="2025 年 9 月创新大赛" loading="lazy" />
+            <img src="assets/images/news/2026.5.jpg" alt="2026 年 5 月 OPC 活动" loading="lazy" />
+            <img src="assets/images/news/2025.6-1.jpg" alt="" aria-hidden="true" loading="lazy" />
+            <img src="assets/images/news/2025.8.jpg" alt="" aria-hidden="true" loading="lazy" />
+            <img src="assets/images/news/2025.9.jpg" alt="" aria-hidden="true" loading="lazy" />
+            <img src="assets/images/news/2026.5.jpg" alt="" aria-hidden="true" loading="lazy" />
+          </div>
+        </div>
+      </section>
+
+      <section id="education" class="section" aria-labelledby="education-heading">
+        <h2 id="education-heading" class="section__title">Education &amp; Experience</h2>
+        <ul class="content-list">
+          <li>2025 – now，中山大学航空航天学院，航空宇航科学与技术</li>
+          <li>2022 – 2022，中国航天五院北京卫星制造厂有限公司，项目实习</li>
+          <li>2022 – 2025，广东工业大学机电工程学院，机械工程</li>
+          <li>2021 – 2022，中科院广州先进技术研究所，机械实习</li>
+          <li>2017 – 2021，韶关学院智能工程学院，车辆工程</li>
+        </ul>
+      </section>
+
+      <section id="projects" class="section" aria-labelledby="projects-heading">
+        <h2 id="projects-heading" class="section__title">Open Projects</h2>
+        <ul class="content-list">
+          <li class="project-card">
+            <strong><a href="https://my.feishu.cn/wiki/PXtwwWwnBiEZHvkUt0mcGnSEnYc?from=from_copylink">灵巧手控制与仿真入门自学清单</a></strong>：
+            涵盖结构设计与控制方法、强化学习控制理论、Isaac Sim 仿真基本操作和真机 ORCA 调试。
+          </li>
+          <li class="project-card">
+            <strong><a href="https://my.feishu.cn/wiki/DFKiwP7ILi5GMJkeIcicctOqnoh?from=from_copylink">强化学习入门自学清单</a></strong>：
+            涵盖强化学习基本术语、Bellman、Iteration、MC、SGD、TD 等策略评估与策略优化方法。
+          </li>
+        </ul>
+
+        <div class="video-embed">
+          <iframe
+            src="https://player.bilibili.com/player.html?bvid=BV1QP5y6EEiQ&page=1&autoplay=1&loop=1&muted=1"
+            title="Bilibili 视频"
+            allowfullscreen
+            allow="autoplay; fullscreen"
+          ></iframe>
+        </div>
+      </section>
+
+      <section id="publications" class="section" aria-labelledby="publications-heading">
+        <h2 id="publications-heading" class="section__title">Publications &amp; Works</h2>
+        <ul class="content-list">
+          <li>
+            Tao Zhang*, <strong>Peineng Zhong</strong>, Zhongxian Zhao, Guangfei Zhang, Lusi Wang, Zeng Zhao, Qichen Sun, Kun Xu, Xilun Ding.
+            Development and testing of a sealing and water content measurement system for drilling and sampling in a simulated lunar polar environment [J]. <em>Acta Astronautica</em>, 2025.
+          </li>
+          <li>
+            <strong>Peineng Zhong</strong>, Lusi Wang, Guangfei Zhang, Jinchang Xu, Supin Wang, Suolai Zhang, Kun Xu, Xilun Ding, Tao Zhang*.
+            Thermal-vacuum regolith environment simulator for drilling tests in lunar polar regions [J]. <em>Acta Astronautica</em>, 2025, 229:13-26.
+          </li>
+          <li>
+            <strong>Peineng Zhong</strong>, Jinchang Xu, Lusi Wang*, Zeng Zhao, Qichen Sun, Ting Zeng, Haotian Wang, Jiabin Liu, Riyue Wu, Jiawei Dong, Kun Xu, and Tao Zhang*.
+            Design and Experiments of a Regolith Environment Simulator for Lunar Polar Region Exploration [C]// ICMD 2023, Chengdu, China, Springer, 2647-2658.
+          </li>
+          <li>
+            张涛，<strong>钟沛能</strong>，许锦昌，刘家斌，张广飞，叶旻辉，武日月，董佳伟．一种具有测温系统的钻具．
+            （专利号：ZL202311454611.9，授权日：2025-09-09）.
+          </li>
+          <li>
+            张涛，<strong>钟沛能</strong>，许锦昌，张广飞，赵曾，赵忠贤，刘家斌，武日月，董佳伟，王伟．一种星壤自动收集封装设备．
+            （专利号：ZL202311111396.2，授权日：2025-12-26）.
+          </li>
+        </ul>
+      </section>
+
+      <section id="honors" class="section" aria-labelledby="honors-heading">
+        <h2 id="honors-heading" class="section__title">Honors &amp; Awards</h2>
+        <ul class="content-list">
+          <li>灵巧手线上实训营，2026 年灵心巧手（北京）&amp; Xbotics 具身智能社区联合举办课程与实训营表现优异。</li>
+          <li>轻量化大负载绳驱空间机械臂，2025 年新域新质创新大赛（决赛·青岛）优胜奖。获奖人：钟沛能、张璐明、林龙凯。</li>
+          <li>Thermal-vacuum regolith environment simulator…，2024 广东省研究生学术论坛「奥普特」杯机械工程分论坛二等奖。</li>
+          <li>多杆接卸式星壤钻探取样机器人，2023 年中国（国际）传感器创新创业大赛（华南赛区）一等奖。</li>
+        </ul>
+
+        <div class="honor-gallery">
+          <article class="honor-card">
+            <img
+              src="assets/images/honors/01.jpg"
+              alt="灵巧手线上实训营证书"
+              data-lightbox
+              loading="lazy"
+            />
+            <p>灵巧手线上实训营优秀学员</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="section" aria-labelledby="contact-heading">
+        <h2 id="contact-heading" class="section__title">Contact</h2>
+        <p class="contact-box">
+          欢迎通过 Email 联系我：
+          <a href="mailto:peinengzhong@gmail.com">peinengzhong@gmail.com</a>
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© 2026 Peineng Zhong · Hosted on GitHub Pages</p>
+    </footer>
   </div>
 
-  <h2>News</h2>
-  <ul>
-    <li>05/2026 参加南沙未来产业训练营 OPC 社区全球启航活动，南沙。</li>
-    <li>04/2026 参加机器人全产业链接会 <a href="https://fairplus.cn">FAIR Plus 2026</a>，深圳。</li>
-    <li>12/2025 成立中山大学本科生大创团队，研究方向包括灵巧手、拟人臂和遥操作，其中一项获得国家级资助。</li>
-    <li>09/2025 参加新质新域创新大赛 2025·决赛，青岛，项目“轻量化大负载绳驱空间机械臂”获得优胜奖。</li>
-    <li>08/2025 参加国际仿生智能会议 <a href="https://www.icbir.org/2025">ICBIR 2025</a>，张掖。</li>
-    <li>06/2025 攻读中山大学航空航天学院博士学位，进入空间机器人与具身智能实验室。</li>
-  </ul>
-
-  <div class="gallery-wrapper">
-    <div class="gallery-track">
-      <img src="2025.6-1.jpg" alt="News gallery image 1">
-      <img src="2025.8.jpg" alt="News gallery image 2">
-      <img src="2025.9.jpg" alt="News gallery image 3">
-      <img src="2026.5.jpg" alt="News gallery image 4">
-
-      <!-- 重复一遍图片，用于实现无缝循环滚动 -->
-      <img src="2025.6-1.jpg" alt="News gallery image 1">
-      <img src="2025.8.jpg" alt="News gallery image 2">
-      <img src="2025.9.jpg" alt="News gallery image 3">
-      <img src="2026.5.jpg" alt="News gallery image 4">
-    </div>
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="图片预览">
+    <button type="button" class="lightbox-close" aria-label="关闭预览">&times;</button>
+    <img id="lightbox-img" src="" alt="" />
   </div>
 
-  <h2>Education & Experience</h2>
-  <ul>
-    <li>2025 - now，中山大学航空航天学院，航空宇航科学与技术</li>
-    <li>2022 - 2022，中国航天五院北京卫星制造厂有限公司，项目实习</li>
-    <li>2022 - 2025，广东工业大学机电工程学院，机械工程</li>
-    <li>2021 - 2022，中科院广州先进技术研究所，机械实习</li>
-    <li>2017 - 2021，韶关学院智能工程学院，车辆工程</li>
-  </ul>
-
-  <h2>Open Projects</h2>
-  <ul>
-    <li>
-      <strong><a href="https://my.feishu.cn/wiki/PXtwwWwnBiEZHvkUt0mcGnSEnYc?from=from_copylink">灵巧手控制与仿真入门自学清单</a></strong>：
-      这是一份灵巧手方向的入门学习清单，主要涵盖结构设计与控制方法、强化学习控制理论、Isaac Sim 仿真基本操作和真机 ORCA 调试。
-    </li>
-    <li>
-      <strong><a href="https://my.feishu.cn/wiki/DFKiwP7ILi5GMJkeIcicctOqnoh?from=from_copylink">强化学习入门自学清单</a></strong>：
-      这是一份强化学习入门学习清单，主要涵盖强化学习基本术语、Bellman、Iteration、MC、SGD、TD 等策略评估与策略优化方法。
-    </li>
-  </ul>
-
-  <div class="bilibili-video">
-    <iframe
-      src="https://player.bilibili.com/player.html?bvid=BV1QP5y6EEiQ&page=1&autoplay=1&loop=1&muted=1"
-      scrolling="no"
-      frameborder="no"
-      framespacing="0"
-      allowfullscreen="true"
-      allow="autoplay; fullscreen">
-    </iframe>
-  </div>
-
-  <h2>Publications & Works</h2>
-  <ul>
-    <li>
-      Tao Zhang*, <strong>Peineng Zhong</strong>, Zhongxian Zhao, Guangfei Zhang, Lusi Wang, Zeng Zhao, Qichen Sun, Kun Xu, Xilun Ding.
-      Development and testing of a sealing and water content measurement system for drilling and sampling in a simulated lunar polar environment [J]. Acta Astronautica, 2025.
-    </li>
-    <li>
-      <strong>Peineng Zhong</strong>, Lusi Wang, Guangfei Zhang, Jinchang Xu, Supin Wang, Suolai Zhang, Kun Xu, Xilun Ding, Tao Zhang*.
-      Thermal-vacuum regolith environment simulator for drilling tests in lunar polar regions [J]. Acta Astronautica, 2025, 229:13-26.
-    </li>
-    <li>
-      <strong>Peineng Zhong</strong>, Jinchang Xu, Lusi Wang*, Zeng Zhao, Qichen Sun, Ting Zeng, Haotian Wang, Jiabin Liu, Riyue Wu, Jiawei Dong, Kun Xu, and Tao Zhang*.
-      Design and Experiments of a Regolith Environment Simulator for Lunar Polar Region Exploration [C]// 2023 International Conference on Mechanical Design (ICMD 2023), Oct. 20-22, 2023, Chengdu, China, Springer, 2647-2658.
-    </li>
-    <li>
-      张涛，<strong>钟沛能</strong>，许锦昌，刘家斌，张广飞，叶旻辉，武日月，董佳伟．一种具有测温系统的钻具．
-      （专利号：ZL202311454611.9，申请日：2023-11-02，授权日：2025-09-09）.
-    </li>
-    <li>
-      张涛，<strong>钟沛能</strong>，许锦昌，张广飞，赵曾，赵忠贤，刘家斌，武日月，董佳伟，王伟．一种星壤自动收集封装设备．
-      （专利号：ZL202311111396.2，申请日期：2023-08-30，授权日：2025-12-26）.
-    </li>
-  </ul>
-
-  <h2>Honors & Awards</h2>
-  <ul>
-    <li>灵巧手线上实训营，2026 年灵心巧手（北京）& Xbotics 具身智能社区联合举办课程与实训营表现优异。</li>
-    <li>轻量化大负载绳驱空间机械臂，2025 年新域新质创新大赛（决赛·青岛）优胜奖。获奖人：钟沛能、张璐明、林龙凯。</li>
-    <li>Thermal-vacuum regolith environment simulator for drilling tests in lunar polar regions，2024 广东省研究生学术论坛“奥普特”杯机械工程分论坛二等奖。获奖人：钟沛能。</li>
-    <li>多杆接卸式星壤钻探取样机器人，2023 年第七届中国（国际）传感器创新创业大赛（华南赛区，高校组创新应用类）一等奖。获奖人：刘家斌、叶旻辉、武日月、龙志炜、钟沛能。</li>
-  </ul>
-
-  <div class="honor-gallery">
-    <div class="honor-card">
-      <img src="01.jpg" alt="灵巧手线上实训营证书" onclick="openLightbox(this)">
-      <p>灵巧手线上实训营优秀学员</p>
-    </div>
-  </div>
-
-  <h2>Contact</h2>
-  <p>欢迎通过 Email 联系我：<a href="mailto:peinengzhong@gmail.com">peinengzhong@gmail.com</a></p>
-
-  <!-- 图片放大预览层 -->
-  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-    <span class="lightbox-close">&times;</span>
-    <img id="lightbox-img" src="" alt="放大预览图片">
-  </div>
-
-  <script>
-    function openLightbox(img) {
-      const lightbox = document.getElementById("lightbox");
-      const lightboxImg = document.getElementById("lightbox-img");
-
-      lightbox.style.display = "flex";
-      lightboxImg.src = img.src;
-      lightboxImg.alt = img.alt;
-    }
-
-    function closeLightbox() {
-      const lightbox = document.getElementById("lightbox");
-      const lightboxImg = document.getElementById("lightbox-img");
-
-      lightbox.style.display = "none";
-      lightboxImg.src = "";
-      lightboxImg.alt = "放大预览图片";
-    }
-
-    document.addEventListener("keydown", function(event) {
-      if (event.key === "Escape") {
-        closeLightbox();
-      }
-    });
-  </script>
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>
