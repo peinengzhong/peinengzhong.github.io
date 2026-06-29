@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Peineng Zhong（钟沛能）</title>
+
+  <!-- Font Awesome 图标库 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Open Graph：飞书、微信、Slack、Twitter 等平台常用的链接预览信息 -->
+  <meta property="og:title" content="Peineng Zhong（钟沛能）" />
+  <meta property="og:description" content="中山大学博士生，研究方向为具身智能机器人、机器人本体设计、视触觉感知与强化学习控制。" />
+  <meta property="og:image" content="https://peinengzhong.github.io/avatar.jpg" />
+  <meta property="og:url" content="https://peinengzhong.github.io/" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card：部分平台也会读取这组信息 -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Peineng Zhong（钟沛能）" />
+  <meta name="twitter:description" content="中山大学博士生，研究方向为具身智能机器人、机器人本体设计、视触觉感知与强化学习控制。" />
+  <meta name="twitter:image" content="https://peinengzhong.github.io/avatar.jpg" />
+
+  <style>
+    :root {
+      --bg: #f7f8fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+      --primary: #2563eb;
+      --primary-soft: #eff6ff;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 28px 20px 56px;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      margin: -28px -20px 28px;
+      padding: 14px 20px;
+      background: rgba(247, 248, 251, 0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(229, 231, 235, 0.85);
+    }
+
+    .brand {
+      font-weight: 750;
+      color: var(--text);
+      white-space: nowrap;
+    }
+
+    .nav {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      font-size: 14px;
+    }
+
+    .nav a {
+      color: var(--muted);
+    }
+
+    .nav a:hover {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      gap: 28px;
+      align-items: center;
+      padding: 30px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .avatar {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid var(--primary-soft);
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 38px;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+    }
+
+    .subtitle {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .intro {
+      margin: 0 0 16px;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 11px;
+      border-radius: 999px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .links a:hover {
+      text-decoration: none;
+      filter: brightness(0.98);
+    }
+
+    section {
+      margin-top: 26px;
+      padding: 26px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 6px 22px rgba(15, 23, 42, 0.05);
+    }
+
+    h2 {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 18px;
+      font-size: 24px;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+    }
+
+    h2::before {
+      content: "";
+      width: 5px;
+      height: 22px;
+      border-radius: 99px;
+      background: var(--primary);
+      flex: 0 0 auto;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    li:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline li,
+    .works li,
+    .honors li {
+      padding-left: 2px;
+    }
+
+    .gallery-wrapper {
+      width: 100%;
+      overflow: hidden;
+      margin-top: 20px;
+      padding: 4px 0 8px;
+    }
+
+    .gallery-track {
+      display: flex;
+      gap: 14px;
+      width: max-content;
+      animation: gallery-scroll 28s linear infinite;
+    }
+
+    .gallery-wrapper:hover .gallery-track {
+      animation-play-state: paused;
+    }
+
+    .gallery-track img {
+      height: 170px;
+      width: auto;
+      max-width: 260px;
+      flex-shrink: 0;
+      object-fit: cover;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.12);
+    }
+
+    @keyframes gallery-scroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .project-card {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fbfdff;
+    }
+
+    .project-card h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+
+    .project-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .bilibili-video {
+      width: 100%;
+      max-width: 520px;
+      aspect-ratio: 16 / 9;
+      margin-top: 20px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 26px rgba(15, 23, 42, 0.13);
+      background: #000;
+    }
+
+    .bilibili-video iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    .honor-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .honor-card {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--card);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .honor-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px rgba(15, 23, 42, 0.12);
+    }
+
+    .honor-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+      cursor: pointer;
+    }
+
+    .honor-card p {
+      margin: 0;
+      padding: 10px 12px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .contact-card {
+      margin: 0;
+      padding: 18px;
+      border-radius: 16px;
+      background: var(--primary-soft);
+    }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      padding: 22px;
+      background: rgba(0, 0, 0, 0.82);
+    }
+
+    .lightbox img {
+      max-width: 92vw;
+      max-height: 88vh;
+      border-radius: 12px;
+      background: #fff;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+    }
+
+    .lightbox-close {
+      position: fixed;
+      top: 18px;
+      right: 26px;
+      color: #fff;
+      font-size: 36px;
+      line-height: 1;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    @media (max-width: 760px) {
+      .topbar {
+        position: static;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav {
+        justify-content: flex-start;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 24px;
+      }
+
+      .avatar {
+        width: 138px;
+        height: 138px;
+      }
+
+      h1 {
+        font-size: 32px;
+      }
+
+      section {
+        padding: 22px;
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .honor-gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 520px) {
+      .page {
+        padding: 22px 14px 44px;
+      }
+
+      .topbar {
+        margin: -22px -14px 22px;
+        padding: 14px;
+      }
+
+      .nav {
+        gap: 10px;
+        font-size: 13px;
+      }
+
+      .hero,
+      section {
+        border-radius: 16px;
+      }
+
+      .honor-gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-track img {
+        height: 150px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <header class="topbar">
+      <a class="brand" href="#">Peineng Zhong</a>
+      <nav class="nav" aria-label="页面导航">
+        <a href="#news">News</a>
+        <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
+        <a href="#publications">Publications</a>
+        <a href="#honors">Honors</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero" aria-label="个人简介">
+      <img class="avatar" src="avatar.jpg" alt="钟沛能头像" />
+      <div>
+        <h1>Peineng Zhong</h1>
+        <p class="subtitle">中山大学博士 / Xbotics 具身智能社区学员 / 《海军航空大学学报》学术联络人</p>
+        <p class="intro">
+          Hi！我是钟沛能，中山大学航院的一年级博士生，导师是孟得山。我目前的研究方向是具身智能机器人，包括机器人本体设计、视触觉感知、强化学习控制，同时加入并成为了 Xbotics 具身智能社区学员。
+          硕士期间受中国空间技术研究院北京卫星制造厂有限公司邀请参与了为期 2 年的航天领域横向工程项目。我在 ICBIR、ICMD 等学术会议上发表过 2 篇会议论文，在中科院二区期刊 Acta Astronautica（AA）上发表过 2 篇论文，授权发明专利 2 项，担任《海军航空大学学报》学术联络人。
+        </p>
+        <div class="links">
+          <a href="mailto:peinengzhong@gmail.com"><i class="fa-solid fa-envelope"></i>Email</a>
+          <a href="https://github.com/你的用户名"><i class="fa-brands fa-github"></i>GitHub</a>
+          <a href="https://www.researchgate.net/profile/Peineng-Zhong?ev=hdr_xprf&_sg=1P5AWWk2GZL0F2V7YFlGTyZU-W56kpXu4-DXcK8ogYleL5iERdWhb2V8WbUHqCyHoiCdpSw_l_phQJQXwyM-R3OJ&_tp=eyJjb250ZXh0Ijp7ImZpcnN0UGFnZSI6ImhvbWUiLCJwYWdlIjoiaG9tZSIsInByZXZpb3VzUGFnZSI6ImhvbWUiLCJwb3NpdGlvbiI6Imdsb2JhbEhlYWRlciJ9fQ"><i class="fa-brands fa-researchgate"></i>ResearchGate</a>
+          <a href="#"><i class="fa-brands fa-google-scholar"></i>Google Scholar</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="news">
+      <h2>News</h2>
+      <ul class="timeline">
+        <li>05/2026 参加 <a href="https://mp.weixin.qq.com/s/rNdrooljGdYPVaSIjeCa1g?poc_token=HI0rHWqjn2dX79P1x31XfXpay7hH3z2BXcVDT4_n">Xbotics带领的灵心巧手公司参观</a>交流活动，深圳。</li>
+        <li>05/2026 参加南沙未来产业训练营 OPC 社区全球启航活动，南沙。</li>
+        <li>04/2026 参加机器人全产业链接会 <a href="https://fairplus.cn">FAIR Plus 2026</a>，深圳。</li>
+        <li>12/2025 成立中山大学本科生大创团队，研究方向包括灵巧手、拟人臂和遥操作，其中一项获得国家级资助。</li>
+        <li>09/2025 参加新质新域创新大赛 2025·决赛，青岛，项目“轻量化大负载绳驱空间机械臂”获得优胜奖。</li>
+        <li>08/2025 参加国际仿生智能会议 <a href="https://www.icbir.org/2025">ICBIR 2025</a>，张掖。</li>
+        <li>06/2025 攻读中山大学航空航天学院博士学位，进入空间机器人与具身智能实验室。</li>
+      </ul>
+
+      <div class="gallery-wrapper" aria-label="新闻照片滚动相册">
+        <div class="gallery-track">
+          <img src="2025.6-1.jpg" alt="News gallery image 1">
+          <img src="2025.8.jpg" alt="News gallery image 2">
+          <img src="2025.9.jpg" alt="News gallery image 3">
+          <img src="2026.5.jpg" alt="News gallery image 4">
+          <img src="2026.5-1.jpg" alt="News gallery image 5">
+          <img src="2025.6-1.jpg" alt="News gallery image 1">
+          <img src="2025.8.jpg" alt="News gallery image 2">
+          <img src="2025.9.jpg" alt="News gallery image 3">
+          <img src="2026.5.jpg" alt="News gallery image 4">
+          <img src="2026.5-1.jpg" alt="News gallery image 5">
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Education & Experience</h2>
+      <ul class="timeline">
+        <li>2025 - now，中山大学航空航天学院，航空宇航科学与技术</li>
+        <li>2022 - 2022，中国航天五院北京卫星制造厂有限公司，项目实习</li>
+        <li>2022 - 2025，广东工业大学机电工程学院，机械工程</li>
+        <li>2021 - 2022，中科院广州先进技术研究所，机械实习</li>
+        <li>2017 - 2021，韶关学院智能工程学院，车辆工程</li>
+      </ul>
+    </section>
+
+    <section id="projects">
+      <h2>Open Projects</h2>
+      <div class="project-grid">
+        <article class="project-card">
+          <h3><a href="https://my.feishu.cn/wiki/PXtwwWwnBiEZHvkUt0mcGnSEnYc?from=from_copylink">灵巧手控制与仿真入门自学清单</a></h3>
+          <p>涵盖结构设计与控制方法、强化学习控制理论、Isaac Sim 仿真基本操作和真机 ORCA 调试。</p>
+        </article>
+        <article class="project-card">
+          <h3><a href="https://my.feishu.cn/wiki/DFKiwP7ILi5GMJkeIcicctOqnoh?from=from_copylink">强化学习入门自学清单</a></h3>
+          <p>涵盖强化学习基本术语、Bellman、Iteration、MC、SGD、TD 等策略评估与策略优化方法。</p>
+        </article>
+      </div>
+
+      <div class="bilibili-video">
+        <iframe
+          src="https://player.bilibili.com/player.html?bvid=BV1QP5y6EEiQ&page=1&autoplay=1&loop=1&muted=1"
+          scrolling="no"
+          frameborder="no"
+          framespacing="0"
+          allowfullscreen="true"
+          allow="autoplay; fullscreen">
+        </iframe>
+      </div>
+    </section>
+
+    <section id="publications">
+      <h2>Publications & Works</h2>
+      <ul class="works">
+        <li>
+          Tao Zhang*, <strong>Peineng Zhong</strong>, Zhongxian Zhao, Guangfei Zhang, Lusi Wang, Zeng Zhao, Qichen Sun, Kun Xu, Xilun Ding.
+          Development and testing of a sealing and water content measurement system for drilling and sampling in a simulated lunar polar environment [J]. Acta Astronautica, 2025.
+        </li>
+        <li>
+          <strong>Peineng Zhong</strong>, Lusi Wang, Guangfei Zhang, Jinchang Xu, Supin Wang, Suolai Zhang, Kun Xu, Xilun Ding, Tao Zhang*.
+          Thermal-vacuum regolith environment simulator for drilling tests in lunar polar regions [J]. Acta Astronautica, 2025, 229:13-26.
+        </li>
+        <li>
+          <strong>Peineng Zhong</strong>, Jinchang Xu, Lusi Wang*, Zeng Zhao, Qichen Sun, Ting Zeng, Haotian Wang, Jiabin Liu, Riyue Wu, Jiawei Dong, Kun Xu, and Tao Zhang*.
+          Design and Experiments of a Regolith Environment Simulator for Lunar Polar Region Exploration [C]// 2023 International Conference on Mechanical Design (ICMD 2023), Oct. 20-22, 2023, Chengdu, China, Springer, 2647-2658.
+        </li>
+        <li>
+          张涛，<strong>钟沛能</strong>，许锦昌，刘家斌，张广飞，叶旻辉，武日月，董佳伟．一种具有测温系统的钻具．
+          （专利号：ZL202311454611.9，申请日：2023-11-02，授权日：2025-09-09）.
+        </li>
+        <li>
+          张涛，<strong>钟沛能</strong>，许锦昌，张广飞，赵曾，赵忠贤，刘家斌，武日月，董佳伟，王伟．一种星壤自动收集封装设备．
+          （专利号：ZL202311111396.2，申请日期：2023-08-30，授权日：2025-12-26）.
+        </li>
+      </ul>
+    </section>
+
+    <section id="honors">
+      <h2>Honors & Awards</h2>
+      <ul class="honors">
+        <li>灵巧手线上实训营，2026 年灵心巧手（北京）& Xbotics 具身智能社区联合举办课程与实训营表现优异。</li>
+        <li>轻量化大负载绳驱空间机械臂，2025 年新域新质创新大赛（决赛·青岛）优胜奖。获奖人：钟沛能、张璐明、林龙凯。</li>
+        <li>Thermal-vacuum regolith environment simulator for drilling tests in lunar polar regions，2024 广东省研究生学术论坛“奥普特”杯机械工程分论坛二等奖。获奖人：钟沛能。</li>
+        <li>多杆接卸式星壤钻探取样机器人，2023 年第七届中国（国际）传感器创新创业大赛（华南赛区，高校组创新应用类）一等奖。获奖人：刘家斌、叶旻辉、武日月、龙志炜、钟沛能。</li>
+      </ul>
+
+      <div class="honor-gallery">
+        <div class="honor-card">
+          <img src="01.jpg" alt="灵巧手线上实训营证书" onclick="openLightbox(this)">
+          <p>灵巧手线上实训营优秀学员</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p class="contact-card">欢迎通过 Email 联系我：<a href="mailto:peinengzhong@gmail.com">peinengzhong@gmail.com</a></p>
+    </section>
+  </main>
+
+  <!-- 图片放大预览层 -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="" alt="放大预览图片">
+  </div>
+
+  <script>
+    function openLightbox(img) {
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+
+      lightbox.style.display = "flex";
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+    }
+
+    function closeLightbox() {
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+
+      lightbox.style.display = "none";
+      lightboxImg.src = "";
+      lightboxImg.alt = "放大预览图片";
+    }
+
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "Escape") {
+        closeLightbox();
+      }
+    });
+  </script>
+</body>
+</html>
